@@ -1,0 +1,240 @@
+.contactList-container{
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.contactListHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.contactListHeader h2{
+    font-size: 18px;
+    /* padding: 0; */
+    /* margin: 16px 0px; */
+}
+
+.iconoir--chat-plus-in {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M9 12h3m3 0h-3m0 0V9m0 3v3m0 7c5.523 0 10-4.477 10-10S17.523 2 12 2S2 6.477 2 12c0 1.821.487 3.53 1.338 5L2.5 21.5l4.5-.838A9.96 9.96 0 0 0 12 22'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+  .pepicons-pencil--dots-y {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M9 15.25a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0m0-5a1.25 1.25 0 1 1 2.5 0a1.25 1.25 0 0 1-2.5 0m0-5a1.249 1.249 0 1 1 2.5 0a1.25 1.25 0 1 1-2.5 0'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  
+  }
+
+.contactListHeaderIcon{
+    padding: 0;
+    margin: 8px 0px;
+
+}
+
+.contactListHeaderIcon span{
+
+    margin: 0px 0px 0px 15px;
+    cursor: pointer;
+}
+.contactListHeader-search{
+    position: relative;
+}
+.contactListHeader-search input{
+
+    width: 100%;
+    padding: 8px 5px;
+    background-color: #222e35;
+    border: none;
+    border-radius: 5px;
+    text-indent: 50px;
+    font-size: 12px;
+    cursor:text;
+    color: #AEBAC1;
+
+}
+.contactListHeader-search input:focus{
+    outline: none;
+}
+
+.contactListHeader-search span{
+    position: absolute;
+    top: 6px;
+    left: 10px;
+}
+
+.weui--search-outlined {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='m16.31 15.561l4.114 4.115l-.848.848l-4.123-4.123a7 7 0 1 1 .857-.84M16.8 11a5.8 5.8 0 1 0-11.6 0a5.8 5.8 0 0 0 11.6 0'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    color: #AEBAC1;
+
+  }
+
+  .contactListHeader-categr{
+
+    width: 100%;
+    padding: 0;
+    margin: 8px 0;
+    display: flex;
+  }
+
+  .contactListHeader-categr span{
+
+    background-color: #222e35;
+    margin: 0 10px 0 0;
+    padding: 8px 10px;
+    font-size: 12px;
+    border-radius: 50px;
+    color: #AEBAC1;
+    cursor: pointer;
+  }
+  .contactListHeader-categr span:hover{
+    background-color: #2b3941;
+
+  }
+  .contactListHeader-categr span.active{
+
+    background:#00a884 ;
+    color: #00a884;
+  }
+
+  .contact-persone{
+
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+
+  }
+
+  .contact-persone .contact-persone-details{
+
+    display: flex;
+    padding: 0;
+    cursor: pointer;
+
+  }
+  .contact-persone .contact-persone-details:hover{
+    background-color: #2b3941;
+    width: 100%;
+  }
+
+  .contact-persone-details .userProfile img{
+
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin: 5px 12px 5px 0;
+
+  }
+
+  .contact-persone-details .userName{
+    padding: 0;
+    margin: 8px 0 0 0;
+    font-size: 15px;
+    color:#d2dbe0;
+
+  }
+  .contact-persone-details .userNameD{
+
+    border-bottom: .1px solid #3f4246;
+    width: 100%;
+  }
+
+  .contact-persone-details .lastMessage{
+    font-size: 12px;
+    color: #AEBAC1;
+
+  }
+
+  /* user profile */
+
+  .profile-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .profile-popup-content h2{
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .profile-popup-content {
+    background: #182229;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    position: relative;
+  }
+  
+  .profile-popup img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  .user-profileimg{
+
+    display: flex;
+    justify-content: center;
+  }
+  .profileDetailsBox{
+    width: 100%;
+  }
+  .profileDetailsBox span{
+    margin: 0;
+    font-size: 10px;
+    color: #00a884;
+
+  }
+  .profileDetailsBox p{
+    margin: 0;
+    padding: 0;
+    color: #AEBAC1;
+  }
+  

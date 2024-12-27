@@ -1,0 +1,97 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: "Roboto", Arial, sans-serif;
+    background-color: #d1f0d1; /* WhatsApp-like green background */
+  }
+  
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #d1f0d1;
+  }
+  
+  .auth-card {
+    background-color: #ffffff;
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .auth-card h2 {
+    margin-bottom: 2rem;
+    color: #075e54; /* WhatsApp green header */
+    font-size: 1.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 0.75rem 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f5f5f5;
+    transition: border-color 0.3s ease;
+    text-indent: 10px;
+  }
+  
+  .input-field:focus {
+    border-color: #25d366; /* WhatsApp green */
+    outline: none;
+    background-color: #fff;
+  }
+  
+  .btn-submit {
+    display: inline-block;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #25d366;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-submit:hover {
+    background-color: #20b954;
+  }
+  
+  .toggle-text {
+    margin-top: 1rem;
+    color: #075e54; /* WhatsApp green */
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .toggle-text:hover {
+    text-decoration: underline;
+  }
+  
+  /* Mobile-First Design */
+  @media (max-width: 480px) {
+    .auth-card {
+      padding: 1.5rem;
+    }
+  
+    .auth-card h2 {
+      font-size: 1.25rem;
+    }
+  
+    .btn-submit {
+      font-size: 0.9rem;
+    }
+  }
+  

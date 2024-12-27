@@ -1,0 +1,37 @@
+html{
+    background: rgb(34, 35, 35);
+
+}
+
+.chat-container{
+
+    margin: 0;
+    padding:0;
+    width: 100%;
+    display: flex;
+    font-family: Helvetica;
+    background: rgb(34, 35, 35);
+
+
+}
+
+.contactList-left{
+    width: 100%;
+    max-width:300px;
+    background-color: #111b21;
+    padding: 10px 15px;
+    margin: 15px 0 15px 110px;
+    color: #fff;
+
+}
+
+.chatWindow-right{
+    width:100% ;
+    max-width:1000px;
+    background-color: rgb(213, 167, 108);
+    margin: 15px 110px 15px 0px;
+    padding: 0px;
+    background-color: #222e35;
+    color: #fff;
+
+}
