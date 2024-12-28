@@ -131,6 +131,10 @@
     flex-direction: column;
     margin: 0;
     padding: 0;
+    height:75vh;
+    scroll-behavior:smooth;
+    overflow-y: scroll;
+    scrollbar-width: thin;
 
   }
 

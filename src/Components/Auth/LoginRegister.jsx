@@ -1,10 +1,8 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import "./Auth.css";
 import { useNavigate } from "react-router-dom";
-import db from "../../Config/InstandDBConfig";
-
-
+import { toast } from "react-toastify";
 
 
 const LoginRegister = () => {
@@ -16,44 +14,48 @@ const LoginRegister = () => {
 
   const number = parseInt(phoneNumber);
 
-  const { registerUser, loginUser, error, currentUser,isLoading } = useContext(AuthContext);
+  const { registerUser, loginUser, currentUser } = useContext(AuthContext);
 
-  const handleSubmit = async (e, currectUSer) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
 
     if (!number || !password || (!isLogin && !name)) {
-      alert("Please fill in all fields!");
+      toast.info("Please fill in all fields!");
+      return;
+    } else if (!/^\d{10}$/.test(number)) { 
+      toast.info("Number must be exactly 10 digits");
       return;
     }
-
+ 
     if (isLogin) {
-      loginUser(number, password);
+     const res = await loginUser(number, password);
 
-    } else {
-
-      const res = await registerUser(name, number, password);
-      if (res) {
-        alert("Registration successful!");
-        setIsLogin(true);
-      }
-
-
-    }
-  };
-
-  useEffect(() => {
-    if (currentUser) {
-      alert("login successful");
+     if(res.success===true){
+      toast.success(`${res.message}`);
       localStorage.setItem("userData", JSON.stringify({
         loggedIn: true,
         currentUser
       }));
-
       navigate('/chat');
     }
-  }, [currentUser])
+      else {
+        toast.error(`${res.message}`);
+      }
+   
+    } else {
+       const res = await registerUser(name, number, password);
 
+if(res.success===true){
+  toast.success(`${res.message}`);
+        setIsLogin(true);
+}else{
+  toast.error(`${res.message}`);
+  setIsLogin(false);
+}
+
+    }
+  };
 
   const toggleForm = () => {
     setIsLogin(!isLogin);

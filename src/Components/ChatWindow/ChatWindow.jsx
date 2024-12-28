@@ -1,8 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import './ChatWindow.css';
 import userA from '../../Assets/userAvtar.png';
-import db from "../../Config/InstandDBConfig";
-import { id } from "@instantdb/react";
 import Messages from '../Messages/Messages';
 import MessageInpute from '../MessageInpute/MessageInpute';
 

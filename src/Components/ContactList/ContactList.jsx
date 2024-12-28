@@ -8,7 +8,7 @@ const ContactList = ({ onContactClick, userData }) => {
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [searchTerm, setSearchTerm] = useState(""); 
 
-  const { getAllUsers, currentAllUser, receiverChat } = useContext(AuthContext);
+  const { getAllUsers, currentAllUser } = useContext(AuthContext);
   const loggedInUserId = userData.currentUser.id;
   
 
@@ -95,7 +95,7 @@ const ContactList = ({ onContactClick, userData }) => {
               </div>
               <div className="userNameD">
                 <div className="userName">{user.name}</div>
-                <span className="lastMessage">New messages yet</span>
+                <span className="lastMessage">New messages</span>
               </div>
             </div>
           ))

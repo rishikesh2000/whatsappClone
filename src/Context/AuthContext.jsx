@@ -18,10 +18,9 @@ const AuthProvider = ({ children }) => {
   const [allUserQuery, setAllUserQuery] =useState(null); 
   const [senderChatsQ, setSenderChatsQ] =useState(null); 
   const [recieverChatQ, setRecieverChatQ] =useState(null); 
+  const [existingUserQ, setExistingUserQ] = useState(null);
 
-
-
-  const {  data, isLoading, error } =  db.useQuery(loginQuery);
+  const {  data, isLoading } =  db.useQuery(loginQuery);
 
   const {  data: allData } =  db.useQuery(allUserQuery);
 
@@ -29,21 +28,41 @@ const AuthProvider = ({ children }) => {
 
   const {  data: recieverChatData } =  db.useQuery(recieverChatQ);
 
-
+  const {  data: existingUserD } =  db.useQuery(existingUserQ);
 
   const loginUser  = (number, password) => {
-    const query = {
-      users: {
-        $: {
-          where: {
-            number,
-            password,
+    try {
+      const query = {
+        users: {
+          $: {
+            where: {
+              number,
+              password,
+            },
           },
         },
-      },
-    };
+      };
+    setLoginQuery(query);
 
-  setLoginQuery(query);
+    console.log(data)
+
+    if (isLoading) {
+      return { success: false };
+    }
+
+  if (data.users.length === 0) {
+      return { success: false, message: "User Not Found Register Fisrt" };
+  }
+  
+  if(data.users.length>=0){
+    return { success: true, message: "Loging Successful" };
+  }
+
+    } catch (error) {
+      return { success: false, message: "Login Error, Please Try Again" };
+
+    }
+
 
 };
 
@@ -71,18 +90,41 @@ useEffect(()=>{
 
 
  
-const registerUser = async (name,number,password)=>{ 
-        try {
-            const res = await db.transact(db.tx.users[id()].update({
-                   name:name,
-                    number:number,
-                    password:password,
-                    createdAt: Date.now(), 
-              }));
-        } catch (error) {
-            return error
-        }
+const registerUser = async (name, number, password) => {
+  try {
+    const query = {
+      users: {
+        $: {
+          where: {
+            number,
+          },
+        },
+      },
+    };
+
+   await setExistingUserQ(query);
+    console.log(existingUserD)
+
+    if (existingUserD.users.length > 0) {
+      return { success: false, message: "Number already exists" };
+    }
+
+    await db.transact(
+      db.tx.users[id()].update({
+        name: name,
+        number: number,
+        password: password,
+        createdAt: Date.now(),
+      })
+    );
+
+    return { success: true, message: "User registered successfully" };
+  } catch (error) {
+    return { success: false, message: "An error occurred", error };
   }
+};
+
+
 
 const getAllUsers = async ()=>{
   const query = {

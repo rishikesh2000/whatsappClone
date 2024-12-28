@@ -7,3 +7,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.Toastify__close-button > svg{
+
+  fill:none !important;
+}
+
+.Toastify__toast{
+
+  min-height: 5px !important;
+
+}
+
+.Toastify__toast-body{
+  flex: none !important;
+}
